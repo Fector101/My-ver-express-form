@@ -113,7 +113,7 @@ document.getElementById('getDataBtn').addEventListener('click', () => {
           document.getElementById('serverMessage').textContent = data.message;
         })
         .catch(error => {
-		document.getElementById('serverMessage').textContent = JSON.stringify(error);
+		document.getElementById('serverMessage').textContent = error
 	
 		console.error('Error fetching data:', error)});
     });
