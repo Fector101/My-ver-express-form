@@ -25,7 +25,7 @@ async function sendMail() {
     // Send the email
     let info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
-    return { message: info.response };
+    return { message: 'No error'+info.response };
  
   } catch (error) {
     console.error('Error sending email:', error);
