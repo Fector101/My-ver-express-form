@@ -1,0 +1,41 @@
+
+@media screen and (max-width:1000px) {
+    main {
+        width: 45vw;
+        padding: 3%;
+        /* padding-top: 5%; */
+    }
+}@media screen and (max-width:750px) {
+    main {
+        width: 55vw;
+    }
+}
+@media screen and (max-width:580px) {
+    main {
+        width: 58vw;
+    }
+}
+@media screen and (max-width:400px) {
+    main {
+        width: 85vw;
+        padding: 5%;
+    }
+    form .row{
+        margin-block: 4%;
+    }
+form input[type="submit"]{
+    padding-block: 12px;
+}
+}
+
+@media screen and (min-width:400px) {
+    .warning{
+        background-color: rgb(229, 229, 229);
+        font-weight: 600;
+        
+    }
+    .warning p,.warning svg{
+        color: #e37272;
+        fill: #e37272;
+    }
+}
