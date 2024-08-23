@@ -43,9 +43,9 @@ function getData() {
   return { message: `${process.env.EMAIL_USER}${process.env.EMAIL_PASS}` };
  // return { message: "Hello from the server! batman" };
 }
-app.get('/api/data', (req, res) => {
+app.get('/api/data', async (req, res) => {
   //const data = getData();
-  const data = sendMail()
+  const data = await sendMail()
   res.json(data);
 });
 
