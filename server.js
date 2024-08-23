@@ -1,40 +1,38 @@
 const express= require('express')
 require('dotenv').config()
 const nodemailer=require('nodemailer')
+const app = express()
+const port =3000
+async function sendMail() {
+  try {
+    console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS);
 
-function sendMail(){
-  console.log(process.env.EMAIL_USER,process.env.EMAIL_PASS)
-  let transporter=nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       service: 'gmail',
-      auth:{
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
-  })
+    });
 
-
-  let mailOptions = {
+    let mailOptions = {
       to: 'piperham007@gmail.com',
       from: 'fabianjoseph063@gmail.com',
       subject: 'Test Email',
       text: 'Hello, this is a test email sent from Node.js!'
     };
-    
+
     // Send the email
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        return { message: error};
-        //console.log(error);
-      } else {
-         return { message: 'Email sent: ' + info.response};
-        //console.log('Email sent: ' + info.response);
-      }
-    });
-
+    let info = await transporter.sendMail(mailOptions);
+    console.log('Email sent:', info.response);
+    return { message: info.response };
+ 
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return { message: 'error' };
+ 
+  }
 }
-const app = express()
-const port =3000
-
 app.use(express.static('public'))
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/public/index.html')
