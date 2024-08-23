@@ -47,7 +47,15 @@ app.get('/api/data', (req, res) => {
   res.json(data);
 });
 
+// A simple get greet method
+app.get("/greet", (req, res) => {
+    // get the passed query
+    const { name } = req.query;
+    res.send({ msg: `Welcome ${name}!` });
+});
 
 app.listen(port,()=>{
     console.log(`Server is running on http://localhost:${port}`)
 })
+// export the app for vercel serverless functions
+module.exports = app;
