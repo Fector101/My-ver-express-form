@@ -23,7 +23,7 @@ async function getStates() {
         } // Add the option to the select element
       });
 }
-// getStates()
+ getStates()
 
 const password_ele=document.querySelector('#password')
 const email_ele=document.querySelector('#email')
@@ -104,3 +104,13 @@ show_password_btn.addEventListener('click',function(e){
   }
   password_visble=!password_visble
 })
+document.getElementById('getDataBtn').addEventListener('click', () => {
+      // Call the server API
+      fetch('/api/data')
+        .then(response => response.json())
+        .then(data => {
+          // Update the DOM with the data from the server
+          document.getElementById('serverMessage').textContent = data.message;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
