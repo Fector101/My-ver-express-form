@@ -44,6 +44,7 @@ function getData() {
 }
 app.get('/api/data', (req, res) => {
   const data = getData();
+  sendMail()
   res.json(data);
 });
 
