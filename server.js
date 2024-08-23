@@ -46,8 +46,8 @@ function getData() {
  // return { message: "Hello from the server! batman" };
 }
 app.get('/api/data', (req, res) => {
-  const data = getData();
-  sendMail()
+  //const data = getData();
+  const data = sendMail()
   res.json(data);
 });
 
