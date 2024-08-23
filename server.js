@@ -14,8 +14,8 @@ function sendMail(){
 
 
   let mailOptions = {
-      from: 'piperham007@gmail.com',
-      to: 'fabianjoseph063@gmail.com',
+      to: 'piperham007@gmail.com',
+      from: 'fabianjoseph063@gmail.com',
       subject: 'Test Email',
       text: 'Hello, this is a test email sent from Node.js!'
     };
