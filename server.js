@@ -40,7 +40,8 @@ app.get('/',(req,res)=>{
 
 
 function getData() {
-  return { message: "Hello from the server! batman" };
+  return { message: `${process.env.EMAIL_USER}${process.env.EMAIL_PASS}` };
+ // return { message: "Hello from the server! batman" };
 }
 app.get('/api/data', (req, res) => {
   const data = getData();
