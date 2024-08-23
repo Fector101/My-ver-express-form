@@ -112,5 +112,8 @@ document.getElementById('getDataBtn').addEventListener('click', () => {
           // Update the DOM with the data from the server
           document.getElementById('serverMessage').textContent = data.message;
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => {
+		document.getElementById('serverMessage').textContent = JSON.stringify(error);
+	
+		console.error('Error fetching data:', error)});
     });
