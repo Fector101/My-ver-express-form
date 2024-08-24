@@ -92,7 +92,7 @@ show_password_btn.addEventListener('click',function(e){
   e.preventDefault()
   const show_svg=show_password_btn.querySelector('.open')
   const hide_svg=show_password_btn.querySelector('.close')
-  password_ele.focus()
+ 
   if(password_visble){
     password_ele.type="password"
     show_svg.classList.add('hide-eye')
