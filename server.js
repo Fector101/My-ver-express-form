@@ -97,7 +97,7 @@ const email_html=(user_name) =>`
       <h1> ${user_name} <br> You've Successfully Registered!</h1>
     </div>
     <div class="email-body">
-      <p>Your registration has been now confirmed.</p>
+      <p>Your registration has been confirmed.</p>
       </div>
     <div class="email-footer">
       <p>Follow us on social media for the latest updates!</p>
