@@ -4,7 +4,95 @@ const formParser=require('body-parser')
 const cors=require('cors')
 const app = express()
 const port =3000
-
+email_html=`
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .email-container {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .email-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #007bff;
+      color: white;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .email-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .email-body h2 {
+      color: #333;
+    }
+    .email-body p {
+      color: #555;
+      line-height: 1.6;
+    }
+    .email-footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    .button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .socials {
+      margin-top: 30px;
+    }
+    .socials img {
+      width: 40px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-header">
+      <h1>Thank You for Registering!</h1>
+    </div>
+    <div class="email-body">
+      <h2>Welcome to [Company Name]!</h2>
+      <p>Your registration is now confirmed. You can start using our services by logging into your account.</p>
+      <a href="https://yourwebsite.com/login" class="button">Go to Dashboard</a>
+    </div>
+    <div class="email-footer">
+      <p>Follow us on social media for the latest updates!</p>
+      <div class="socials">
+        <a href="https://facebook.com/yourcompany"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="https://twitter.com/yourcompany"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+        <a href="https://instagram.com/yourcompany"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        <a href="https://linkedin.com/company/yourcompany"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn"></a>
+      </div>
+      <p>If you have any questions, feel free to <a href="mailto:support@yourcompany.com">contact us</a>.</p>
+    </div>
+  </div>
+</body>
+</html>
+`
 
 async function sendMail(send_to) {
   try {
@@ -20,7 +108,8 @@ async function sendMail(send_to) {
       to: send_to,
       from: 'fabianjoseph063@gmail.com',
       subject: 'Test Email',
-      text: 'Hello, this is a test email sent from Node.js!'
+      html: email_html
+      //text: 'Hello, this is a test email sent from Node.js!'
     };
 
     // Send the email
