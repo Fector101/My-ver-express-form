@@ -13,7 +13,7 @@ async function getStates() {
       let states=data.data.states.map(({name})=> name.replace(' State',''))
       // console.log(states)
       states.length && select_ele.querySelector('.loading').classList.add('display-none')
-      states.slice(1,-1).forEach(state => {
+      states.forEach(state => {
         if(state !== "Nasarawa"){
             const option = document.createElement('option');
             option.value = state.toLowerCase();  // Set the value attribute
