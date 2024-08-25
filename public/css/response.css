@@ -55,8 +55,8 @@ button:has(svg){
     gap:7px;
 }
 button svg{
-    height:40px;
-    width: 40px;
+    height:25px;
+    width: 25px;
     fill: white;
 }
 /* 
