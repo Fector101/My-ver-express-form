@@ -54,7 +54,8 @@ button:has(svg){
 }
 button svg{
     margin-block:auto;
-    height:90%;
+    height:50px;
+    width: 50px;
 }
 /* 
 @media screen and (min-width:1000px) {
