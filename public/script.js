@@ -25,17 +25,34 @@ async function getStates() {
  getStates()
 
 const password_ele=document.querySelector('#password')
-const email_ele=document.querySelector('#email')
-function isRightEmailFormat(){
-  const email_text=email_ele.value
-  if(email_text && !email_text.endsWith('@nsuk.edu.ng')){
-    email_ele.parentElement.querySelector('.warning').classList.remove('display-none')
-    return false
-  }else{
-    email_ele.parentElement.querySelector('.warning').classList.add('display-none')
-    return true
-  }
+//const email_ele=document.querySelector('#email')
+//function isRightEmailFormat(){
+ // const email_text=email_ele.value
+ // if(email_text && !email_text.endsWith('@nsuk.edu.ng')){
+   // email_ele.parentElement.querySelector('.warning').classList.remove('display-none')
+  //  return false
+//  }else{
+    //email_ele.parentElement.querySelector('.warning').classList.add('display-none')
+    //return true
+  //}
+//}
+const email_ele = document.querySelector('#email');
 
+function isRightEmailFormat() {
+  const email_text = email_ele.value;
+
+  // Regular expression for validating email format
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if (email_text && emailPattern.test(email_text)) {
+    // Email format is valid
+    email_ele.parentElement.querySelector('.warning').classList.add('display-none');
+    return true;
+  } else {
+    // Email format is invalid
+    email_ele.parentElement.querySelector('.warning').classList.remove('display-none');
+    return false;
+  }
 }
 function checkIfAllFiled(){
   if(!isRightEmailFormat())return false
