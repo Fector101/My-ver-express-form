@@ -94,7 +94,7 @@ const email_html=(user_name) =>`
 <body>
   <div class="email-container">
     <div class="email-header">
-      <h1>Fector 101 <br> You for Registering!</h1>
+      <h1> ${user_name} <br> You for Registering!</h1>
     </div>
     <div class="email-body">
       <!-- <h2>Welcome to [Company Name]!</h2> -->
