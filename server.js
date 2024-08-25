@@ -38,7 +38,7 @@ async function sendMail(send_to) {
 app.use(express.static('public'))
 app.use(express.json())
 app.use(formParser.urlencoded({extended:true})) //extended:true allows to accepts nested objects {user1:{name:'fabian'}}
-console.log(__dirname)
+
 app.use(cors({
             origin: 'https://my-ver-express-form.vercel.app',
             methods:['GET','POST']
@@ -55,6 +55,7 @@ app.get("/success", (req, res) => {
 
 app.post("/submit", async(req, res) => {
     const sent_bool = await sendMail(req.body.email)
+  console.log(__dirname)// trying to umderstand ports and routing
     sent_bool?res.sendFile(__dirname+'/public/successful.html'):res.sendFile(__dirname+'/public/failure.html')
 });
 
