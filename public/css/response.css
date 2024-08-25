@@ -1,0 +1,82 @@
+main:has(.success){
+    --fill-color: rgb(46, 219, 46);
+}
+main:has(.fail){
+    --fill-color: rgb(219, 69, 46);
+}
+svg{
+    fill: var(--fill-color);  
+    border: 1px solid var(--fill-color);
+    border-radius: 100%;
+    --size:10vmax;
+    width: var(--size);
+    height: var(--size);
+    padding: 7%;
+    overflow: visible;
+    box-shadow: 0 0 20px var(--fill-color);
+}
+main{
+    /* display: flex;
+    flex-direction: column;
+    padding-bottom: 1%;
+    align-items: center;
+    gap: 7px; */
+    text-align: center;
+}
+main *{
+    margin-block: 2%;
+}
+main h1{
+    font-size: 4vmax;
+    text-transform: uppercase;
+    padding-top:2%;
+    padding-bottom:0;
+}
+main button{
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 12px;
+    background-color: var(--fill-color);
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: 500;
+    display: block;
+    cursor: pointer;
+}
+
+
+
+/* 
+@media screen and (min-width:1000px) {
+    main{
+        width: 30vw;
+        height: 60vh;
+    }
+} */
+@media screen and (max-width:1000px) {
+    main {
+        padding: 3%;
+    }
+}
+@media screen and (max-width:400px) {
+    main {
+        width: 70vw;
+        padding: 5%;
+    }
+   
+    main h1{
+        font-size: 3vmax;
+        padding-top:5%;
+
+    }
+    p{
+        font-size: 1.5vmax;
+    }
+        
+    :root{
+        --fill-color: rgb(20, 186, 20);
+    }
+}
