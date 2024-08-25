@@ -1,5 +1,4 @@
 const express= require('express')
-require('dotenv').config()
 const nodemailer=require('nodemailer')
 const formParser=require('body-parser')
 const app = express()
