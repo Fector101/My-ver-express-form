@@ -56,6 +56,11 @@ password_ele.addEventListener('input',function(){
   isRightEmailFormat()
 })
 const submit_btn = document.querySelector('button.submit')
+function saveFormData(){
+	let data={}
+	['name','user-name','email','state'].forEach(each=>document.querySelector(`form .row [id="${each}"]`).value)
+	localStorage.setItem('formData',JSON.stringify(data))
+}
 submit_btn.addEventListener('click',function(event){
   event.preventDefault()
   const all_not_empty=checkIfAllFiled()//checks if empty
@@ -67,6 +72,7 @@ submit_btn.addEventListener('click',function(event){
     general_warning.classList.add('display-none')
     submit_btn.classList.add('done')
   }
+  saveFormData()
   document.querySelector('form').submit()
   // 
 
@@ -106,9 +112,7 @@ show_password_btn.addEventListener('click',function(e){
 })
 
 async function reFill(){
-  const res= await fetch('/refill')
-  // console.log(res)
-  const data= await res.json()
+  const data= JSON.parse(localStorage.getItem('formData'))
   if(data !== false){ //false boolean is sent from back end
     Object.keys(data).forEach(each=>{
       document.querySelector(`form .row [id="${each}"]`).value=data[each]
@@ -116,16 +120,3 @@ async function reFill(){
   }
 }
 reFill()
-// document.getElementById('getDataBtn').addEventListener('click', () => {
-//       // Call the server API
-//       fetch('/api/data')
-//         .then(response => response.json())
-//         .then(data => {
-//           // Update the DOM with the data from the server
-//           document.getElementById('serverMessage').textContent = data.message;
-//         })
-//         .catch(error => {
-// 		document.getElementById('serverMessage').textContent = error
-	
-// 		console.error('Error fetching data:', error)});
-//     });
