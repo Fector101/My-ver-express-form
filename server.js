@@ -8,7 +8,7 @@ const email_html=(user_name) =>`
 <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
   <div style="background-color: #ffffff; padding: 20px; margin: 30px auto; max-width: 600px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     <div style="text-align: center; padding: 20px 20px 10px; background-color: #007bff; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-      <h1 style="line-height: 40px;">${user_name} <br> You've Successfully Registered!</h1>
+      <h1 style="line-height: 40px;background-color: #ffffff;">${user_name} <br> You've Successfully Registered!</h1>
     </div>
     <div style="padding: 20px; text-align: center; background-color: #daebfdf2;">
       <p style="color: #555; line-height: 1.6;">Your registration has been confirmed.</p>
