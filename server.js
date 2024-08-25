@@ -16,8 +16,8 @@ const email_html=(user_name) =>`
     <div style="text-align: center; padding: 20px; background-color: #d3d7dc; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
       <p>Follow us on social media for the latest updates!</p>
       <div style="margin-top: 30px;">
-        <a style="display: inline-block;" href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">
-          <img src="https://my-ver-express-form.vercel.app/whatsapp" style="overflow: visible; width: 36px; height: 36px; margin: 0 10px; background-color: white; padding: 5px; border-radius: 60%;" alt="WhatsApp Logo">
+        <a style="box-sizing:border-box;display: inline-block;" href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">
+          <img src="https://my-ver-express-form.vercel.app/whatsapp" style="box-sizing:border-box;overflow: visible; width: 36px; height: 36px; margin: 0 10px; background-color: white; padding: 5px; border-radius: 60%;" alt="WhatsApp Logo">
         </a>
         <a style="display: inline-block;" href="https://github.com/Fector101" alt="github profile">
           <img src="https://my-ver-express-form.vercel.app/github" style="width: 36px; height: 36px; margin: 0 10px;" alt="GitHub Logo">
