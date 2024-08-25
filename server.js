@@ -114,7 +114,7 @@ const email_html=(user_name) =>`
           <img src="https://my-ver-express-form.vercel.app/twitter"  alt="X Logo">
         </a>
       </div>
-      <p>If you have any questions, feel free to <a href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">contact us</a>.</p>
+      <p>If you have any questions, feel free to <a href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">contact me</a>.</p>
     </div>
   </div>
 </body>
