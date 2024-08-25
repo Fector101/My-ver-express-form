@@ -1,9 +1,12 @@
 const express= require('express')
 require('dotenv').config()
 const nodemailer=require('nodemailer')
+const formParser=require('body-parser')
 const app = express()
 const port =3000
-async function sendMail() {
+
+
+async function sendMail(send_to) {
   try {
     console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS);
 
@@ -16,7 +19,7 @@ async function sendMail() {
     });
 
     let mailOptions = {
-      to: 'piperham007@gmail.com',
+      to: send_to,
       from: 'fabianjoseph063@gmail.com',
       subject: 'Test Email',
       text: 'Hello, this is a test email sent from Node.js!'
@@ -25,39 +28,48 @@ async function sendMail() {
     // Send the email
     let info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
-    return { message: 'No error'+info.response };
+    // return { message: 'No error'+info.response };
+    return true
  
   } catch (error) {
     console.error('Error sending email:', error);
-    return { message: 'error' };
+    return false
  
   }
 }
 app.use(express.static('public'))
-app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/public/index.html')
-})
-
-
-function getData() {
-  return { message: `${process.env.EMAIL_USER}${process.env.EMAIL_PASS}` };
- // return { message: "Hello from the server! batman" };
-}
-app.get('/api/data', async (req, res) => {
-  //const data = getData();
-  const data = await sendMail()
-  res.json(data);
-});
-
-// A simple get greet method
-app.get("/greet", (req, res) => {
-    // get the passed query
-    const { name } = req.query;
-    res.send({ msg: `Welcome ${name}!` });
-});
+app.use(express.json())
+app.use(formParser.urlencoded({extended:true})) //extended:true allows to accepts nested objects {user1:{name:'fabian'}}
 
 app.listen(port,()=>{
     console.log(`Server is running on http://localhost:${port}`)
 })
+app.get("/success", (req, res) => { 
+    res.sendFile(__dirname+'/public/successful.html')
+
+});
+
+app.post("/submit", async(req, res) => {
+    const sent_bool = await sendMail(req.body.email)
+    old_data_from_error=req.body
+    console.log(sent_bool,'hereee')
+    sent_bool?res.sendFile(__dirname+'/public/successful.html'):res.sendFile(__dirname+'/public/failure.html')
+});
+
+/**
+ * For form submit failure
+ */
+let old_data_from_error=false //setting to undefined does not work
+
+app.get('/refill',async(req,res)=>{ 
+  res.json(old_data_from_error);
+})
+app.get('/',(req,res)=>{
+  res.sendFile(__dirname+'/public/index.html')
+})
+app.use((req,res)=>{
+  res.status(404).send('Page Sinked')
+})
+
 // export the app for vercel serverless functions
 module.exports = app;
