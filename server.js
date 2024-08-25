@@ -6,7 +6,7 @@ const app = express()
 const port =3000
 const email_html=(user_name) =>`
 <!DOCTYPE html>
-<html>
+<html ⚡4email>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
