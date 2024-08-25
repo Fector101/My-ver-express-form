@@ -42,7 +42,7 @@ main button{
     margin-top: 12px;
     background-color: var(--fill-color);
     border-radius: 5px;
-    color: whitesmoke;
+    color: whitesmoke !important;
     font-weight: 500;
     display: block;
     cursor: pointer;
