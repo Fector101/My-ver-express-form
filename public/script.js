@@ -41,13 +41,13 @@ function checkIfAllFiled(){
   if(!isRightEmailFormat())return false
   const bool=[...document.querySelectorAll('input')]
                                   .every(each=>{
-										const value = each.value
-										if(value){
-											each.parentElement.querySelector('.check')?.classList.remove('tiny')
-										}else{
-											each.parentElement.querySelector('.check')?.classList.add('tiny')
-										}
-										return value
+					const value = each.value
+					if(value){
+						each.parentElement.querySelector('.check')?.classList.remove('tiny')
+					}else{
+						each.parentElement.querySelector('.check')?.classList.add('tiny')
+					}
+					return value
 									})
   bool? submit_btn.classList.add('filled'): submit_btn.classList.remove('filled')
   return bool
