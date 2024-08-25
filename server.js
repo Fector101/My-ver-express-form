@@ -8,8 +8,6 @@ const port =3000
 
 async function sendMail(send_to) {
   try {
-    console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS);
-
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -51,15 +49,9 @@ app.get("/success", (req, res) => {
 
 app.post("/submit", async(req, res) => {
     const sent_bool = await sendMail(req.body.email)
-    old_data_from_error=req.body
-    console.log(sent_bool,'hereee')
     sent_bool?res.sendFile(__dirname+'/public/successful.html'):res.sendFile(__dirname+'/public/failure.html')
 });
 
-/**
- * For form submit failure
- */
-let old_data_from_error=false //setting to undefined does not work
 
 app.get('/refill',async(req,res)=>{ 
   res.json(old_data_from_error);
