@@ -105,15 +105,15 @@ const email_html=(user_name) =>`
       <p>Follow us on social media for the latest updates!</p>
       <div class="socials">
         <a href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">
-        <img class="whatsapp" src="cid:whatsapp" alt="WhatsApp Logo">
+        <img style="width: 36px; height: 36px;" class="whatsapp" src="cid:whatsapp" alt="WhatsApp Logo">
         </a>
 
         <a href="https://github.com/Fector101" alt="Instagram">
-             <img src="cid:github" alt="GitHub Logo">
+             <img style="width: 36px; height: 36px;" src="cid:github" alt="GitHub Logo">
         </a>
         
         <a href="https://x.com/OPieMonarch">
-          <img src="cid:xlogo" alt="X Logo">
+          <img style="width: 36px; height: 36px;" src="cid:xlogo" alt="X Logo">
         </a>
       </div>
       <p>If you have any questions, feel free to <a href="mailto:support@yourcompany.com">contact us</a>.</p>
