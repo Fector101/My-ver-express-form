@@ -94,13 +94,11 @@ const email_html=(user_name) =>`
 <body>
   <div class="email-container">
     <div class="email-header">
-      <h1> ${user_name} <br> You for Registering!</h1>
+      <h1> ${user_name} <br> You've Successfully Registered!</h1>
     </div>
     <div class="email-body">
-      <!-- <h2>Welcome to [Company Name]!</h2> -->
       <p>Your registration has been now confirmed.</p>
-      <!-- <a href="https://yourwebsite.com/login" class="button">Go to Dashboard</a> -->
-    </div>
+      </div>
     <div class="email-footer">
       <p>Follow us on social media for the latest updates!</p>
       <div class="socials">
@@ -136,7 +134,7 @@ async function sendMail(send_to,user_name) {
     let mailOptions = {
       to: send_to,
       from: 'fabianjoseph063@gmail.com',
-      subject: 'Test Email',
+      subject: 'Apex Nexus Registration Complete',
       html: email_html(user_name),
       attachments: [
   {
