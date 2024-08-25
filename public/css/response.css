@@ -1,5 +1,6 @@
 main:has(.success){
     --fill-color: rgb(46, 219, 46);
+    
 }
 main:has(.fail){
     --fill-color: rgb(219, 69, 46);
@@ -47,8 +48,13 @@ main button{
     cursor: pointer;
 }
 
-
-
+button:has(svg){
+    display: flex;
+    gap:7px;
+}
+button svg{
+    margin-block:auto;
+}
 /* 
 @media screen and (min-width:1000px) {
     main{
