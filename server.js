@@ -74,7 +74,7 @@ const email_html=(user_name) =>`
     .socials a{
       display: inline-block;
     }
-    .socials svg{
+    .socials img{
       overflow: visible;
       --size:36px;
       width: var(--size);
@@ -82,7 +82,7 @@ const email_html=(user_name) =>`
       margin: 0 10px;
 
     }
-    .socials svg.whatsapp{
+    .socials img.whatsapp{
       --fill-color:rgb(44, 202, 44);
       fill: var(--fill-color);
       background-color: white;
@@ -105,7 +105,7 @@ const email_html=(user_name) =>`
       <p>Follow us on social media for the latest updates!</p>
       <div class="socials">
         <a href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">
-        <img src="cid:whatsapp" alt="WhatsApp Logo">
+        <img class="whatsapp" src="cid:whatsapp" alt="WhatsApp Logo">
         </a>
 
         <a href="https://github.com/Fector101" alt="Instagram">
