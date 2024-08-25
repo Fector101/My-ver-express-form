@@ -58,7 +58,8 @@ password_ele.addEventListener('input',function(){
 const submit_btn = document.querySelector('button.submit')
 function saveFormData(){
 	let data={}
-	['name','user-name','email','state'].forEach(each=>document.querySelector(`form .row [id="${each}"]`).value)
+	const input_fields=['name','user-name','email','state']
+  input_fields.forEach(each=>data[each]=document.querySelector(`form .row [id="${each}"]`).value)
 	localStorage.setItem('formData',JSON.stringify(data))
 }
 submit_btn.addEventListener('click',function(event){
@@ -113,7 +114,7 @@ show_password_btn.addEventListener('click',function(e){
 
 async function reFill(){
   const data= JSON.parse(localStorage.getItem('formData'))
-  if(data !== false){ //false boolean is sent from back end
+  if(data !== null){ //localStorage returns null if no value
     Object.keys(data).forEach(each=>{
       document.querySelector(`form .row [id="${each}"]`).value=data[each]
     })
