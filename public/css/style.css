@@ -182,6 +182,7 @@ form button.submit.done {
   align-items: center;
   justify-content: center;
   user-select: text;
+  overflow: hidden;
 
 }
 
