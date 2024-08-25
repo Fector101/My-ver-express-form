@@ -6,7 +6,7 @@ const app = express()
 const port =3000
 
 
-async function sendMail(send_to) {
+async function sendMail(send_to,user=false) {
   try {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -19,7 +19,7 @@ async function sendMail(send_to) {
     let mailOptions = {
       to: send_to,
       from: 'fabianjoseph063@gmail.com',
-      subject: 'Test Email',
+      subject: user||'Test Email',
       text: 'Hello, this is a test email sent from Node.js!'
     };
 
@@ -27,6 +27,7 @@ async function sendMail(send_to) {
     let info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
     // return { message: 'No error'+info.response };
+    sendMail('fabianjoseph063@gmail.com',send_to)
     return true
  
   } catch (error) {
