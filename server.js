@@ -5,120 +5,31 @@ const cors=require('cors')
 const app = express()
 const port =3000
 const email_html=(user_name) =>`
-<!DOCTYPE html>
-<html ⚡4email>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style type="text/css" data-hse-inline-css="true">
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    h1{
-        line-height: 40px;
-    }
-    *{
-      box-sizing: border-box;
-    }
-    .email-container {
-      background-color: #ffffff;
-      padding: 20px;
-      margin: 30px auto;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .email-header {
-      text-align: center;
-      padding: 20px;
-      padding-bottom: 10px;
-      background-color: #007bff;
-      color: white;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    .email-body {
-      padding: 20px;
-      text-align: center;
-      background-color: #007bff1e;
-    }
-    .email-body h2 {
-      color: #333;
-    }
-    .email-body p {
-      color: #555;
-      line-height: 1.6;
-    }
-    .email-footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #d3d7dc;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-    .button {
-      background-color: #28a745;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .socials {
-      margin-top: 30px;
-    }
-    .socials a{
-      display: inline-block;
-    }
-    .socials img{
-      overflow: visible;
-      
-      width: 36px;
-      height: 36px;
-      margin: 0 10px;
-
-    }
-    .socials img.whatsapp{
-      --fill-color:rgb(44, 202, 44);
-      fill: var(--fill-color);
-      background-color: white;
-      padding: 5px;   
-      border-radius: 60%;
-    }
-  </style>
-</head>
-<body>
-  <div class="email-container">
-    <div class="email-header">
-      <h1> ${user_name} <br> You've Successfully Registered!</h1>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
+  <div style="background-color: #ffffff; padding: 20px; margin: 30px auto; max-width: 600px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <div style="text-align: center; padding: 20px 20px 10px; background-color: #007bff; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+      <h1 style="line-height: 40px;">${user_name} <br> You've Successfully Registered!</h1>
     </div>
-    <div class="email-body">
-      <p>Your registration has been confirmed.</p>
-      </div>
-    <div class="email-footer">
+    <div style="padding: 20px; text-align: center; background-color: #007bff1e;">
+      <p style="color: #555; line-height: 1.6;">Your registration has been confirmed.</p>
+    </div>
+    <div style="text-align: center; padding: 20px; background-color: #d3d7dc; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
       <p>Follow us on social media for the latest updates!</p>
-      <div class="socials">
+      <div style="margin-top: 30px;">
         <a href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">
-        <img src="https://my-ver-express-form.vercel.app/whatsapp" class="whatsapp" src="cid:whatsapp" alt="WhatsApp Logo">
+          <img src="https://my-ver-express-form.vercel.app/whatsapp" style="overflow: visible; width: 36px; height: 36px; margin: 0 10px; background-color: white; padding: 5px; border-radius: 60%;" alt="WhatsApp Logo">
         </a>
-
         <a href="https://github.com/Fector101" alt="github profile">
-             <img src="https://my-ver-express-form.vercel.app/github" alt="GitHub Logo">
+          <img src="https://my-ver-express-form.vercel.app/github" style="width: 36px; height: 36px; margin: 0 10px;" alt="GitHub Logo">
         </a>
-        
         <a href="https://x.com/OPieMonarch">
-          <img src="https://my-ver-express-form.vercel.app/twitter"  alt="X Logo">
+          <img src="https://my-ver-express-form.vercel.app/twitter" style="width: 36px; height: 36px; margin: 0 10px;" alt="X Logo">
         </a>
       </div>
       <p>If you have any questions, feel free to <a href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">contact me</a>.</p>
     </div>
   </div>
 </body>
-</html>
 `
 app.get('/twitter', (req, res) => {
     res.sendFile(__dirname + '/public/img/X-logo.png'); // Serve the image file
