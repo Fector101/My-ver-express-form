@@ -55,7 +55,7 @@ app.get("/success", (req, res) => {
 
 app.post("/submit", async(req, res) => {
     const sent_bool = await sendMail(req.body.email)
-  console.log(__dirname)// trying to umderstand ports and routing
+  console.log(__dirname+'/public/successful.html')// trying to umderstand ports and routing
     sent_bool?res.sendFile(__dirname+'/public/successful.html'):res.sendFile(__dirname+'/public/failure.html')
 });
 
