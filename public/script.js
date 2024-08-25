@@ -55,8 +55,9 @@ function isRightEmailFormat() {
   }
 }
 function checkIfAllFiled(){
-  if(!isRightEmailFormat())return false
-  const bool=[...document.querySelectorAll('input')]
+  let bool=isRightEmailFormat()
+  if(bool===false) return false 
+  bool=[...document.querySelectorAll('input')]
                                   .every(each=>{
 					const value = each.value
 					if(value){
@@ -86,6 +87,7 @@ submit_btn.addEventListener('click',function(event){
   
   if(all_not_empty === false){
     general_warning.classList.remove('display-none')
+	  return 
   }else{
     general_warning.classList.add('display-none')
     submit_btn.classList.add('done')
