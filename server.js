@@ -10,7 +10,7 @@ const email_html=(user_name) =>`
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+  <style type="text/css" data-hse-inline-css="true">
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
