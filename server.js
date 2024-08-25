@@ -76,9 +76,9 @@ const email_html=(user_name) =>`
     }
     .socials img{
       overflow: visible;
-      --size:36px;
-      width: var(--size);
-      height: var(--size);
+      
+      width: 36px;
+      height: 36px;
       margin: 0 10px;
 
     }
@@ -145,24 +145,7 @@ async function sendMail(send_to,user_name) {
       to: send_to,
       from: 'fabianjoseph063@gmail.com',
       subject: 'Apex Nexus Registration Complete',
-      html: email_html(user_name),
-      attachments: [
-  {
-    filename: 'github.png',
-    path: __dirname + '/public/img/github.png',
-    cid: 'github' // Unique CID for embedding this image
-  },
-  {
-    filename: 'X-logo.png',
-    path: __dirname + '/public/img/X-logo.png',
-    cid: 'xlogo' // Unique CID for embedding this image
-  },
-  {
-    filename: 'WhatsApp.png',
-    path: __dirname + '/public/img/WhatsApp.png',
-    cid: 'whatsapp' // Unique CID for embedding this image
-  }
-]
+      html: email_html(user_name)
       //text: 'Hello, this is a test email sent from Node.js!'
     };
 
