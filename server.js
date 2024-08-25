@@ -10,14 +10,14 @@ const email_html=(user_name) =>`
     <div style="text-align: center; padding: 20px 20px 10px; background-color: #007bff; color: white; border-top-left-radius: 10px; border-top-right-radius: 10px;">
       <h1 style="line-height: 40px;">${user_name} <br> You've Successfully Registered!</h1>
     </div>
-    <div style="padding: 20px; text-align: center; background-color: #DAEBFDF2;">
+    <div style="padding: 20px; text-align: center; background-color: #daebfdf2;">
       <p style="color: #555; line-height: 1.6;">Your registration has been confirmed.</p>
     </div>
     <div style="text-align: center; padding: 20px; background-color: #d3d7dc; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
       <p>Follow us on social media for the latest updates!</p>
       <div style="margin-top: 30px;">
         <a style="box-sizing:border-box;display: inline-block;" href="https://wa.me/2348112321825?text=Hi%20Fabian%2c%20I%27d%20like%20to%20">
-          <img src="https://my-ver-express-form.vercel.app/whatsapp" style="box-sizing:border-box;overflow: visible; width: 36px; height: 36px; margin: 0 10px; background-color: white; padding: 5px; border-radius: 60%;" alt="WhatsApp Logo">
+          <img src="https://my-ver-express-form.vercel.app/whatsapp" style="width: 36px; height: 36px; margin: 0 10px;" alt="WhatsApp Logo">
         </a>
         <a style="display: inline-block;" href="https://github.com/Fector101" alt="github profile">
           <img src="https://my-ver-express-form.vercel.app/github" style="width: 36px; height: 36px; margin: 0 10px;" alt="GitHub Logo">
