@@ -174,17 +174,16 @@ app.use(cors({
 app.listen(port,()=>{
     console.log(`Server is running on http://localhost:${port}`)
 })
-app.get("/success", (req, res) => { 
-    res.sendFile(__dirname+'/public/successful.html')
-
-});
 
 app.post("/submit", async(req, res) => {
     const sent_bool = await sendMail(req.body.email,req.body['user-name'])
     sent_bool?res.sendFile(__dirname+'/public/successful.html'):res.sendFile(__dirname+'/public/failure.html')
 });
 
-
+app.get('/submit', (req, res) => {
+  // Redirect to home page
+  res.redirect('/');
+});
 app.get('/refill',async(req,res)=>{ 
   res.json(old_data_from_error);
 })
