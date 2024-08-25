@@ -37,6 +37,12 @@ async function sendMail(send_to) {
 app.use(express.static('public'))
 app.use(express.json())
 app.use(formParser.urlencoded({extended:true})) //extended:true allows to accepts nested objects {user1:{name:'fabian'}}
+console.log(__dirname)
+app.use(cors({
+            origin: 'https://my-ver-express-form.vercel.app',
+            methods:['GET','POST']
+            })
+       )  // CORS is enable for all routes for protection from unauthorized access
 
 app.listen(port,()=>{
     console.log(`Server is running on http://localhost:${port}`)
