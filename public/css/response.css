@@ -46,6 +46,8 @@ main button{
     font-weight: 500;
     display: block;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
 }
 
 button:has(svg){
@@ -53,9 +55,9 @@ button:has(svg){
     gap:7px;
 }
 button svg{
-    margin-block:auto;
-    height:50px;
-    width: 50px;
+    height:40px;
+    width: 40px;
+    fill: white;
 }
 /* 
 @media screen and (min-width:1000px) {
