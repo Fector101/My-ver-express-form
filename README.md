@@ -1,5 +1,5 @@
 # My-ver-express-form
-I a simple sign up form that sends email to user and is hosted on Vercel
+I a simple sign up form that sends email to user and is hosted with Vercel
 
 # Features
 * Sends email with Nodejs.
