@@ -58,14 +58,6 @@ main:has(.success) button:hover {
 }
 
 
-
-
-
-
-main:has(.success){
-    --fill-color: rgb(46, 219, 46);
-    
-}
 main:has(.fail){
     --fill-color: rgb(219, 69, 46);
 }
