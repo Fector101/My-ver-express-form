@@ -94,10 +94,8 @@ app.post("/submit", async(req, res) => {
 app.get('/submit', (req, res) => {
   // Redirect to home page
   res.redirect('/');
-});
-app.get('/refill',async(req,res)=>{ 
-  res.json(old_data_from_error);
 })
+
 app.get('/',(req,res)=>{
   res.sendFile(__dirname+'/public/index.html')
 })
