@@ -1,0 +1,58 @@
+
+.email-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.email-icon {
+  width: 30px;
+  height:30px;
+}
+
+button {
+  
+  font-family: 'Roboto', sans-serif;
+  fill: white;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  display: flex;
+  font-weight: bold;
+  margin: auto;
+  gap:6px;
+ 
+  align-items: center;
+}
+
+button p{
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: .8px;
+}
+button:hover {
+  background-color: #0056b3;
+}
