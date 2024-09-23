@@ -8,18 +8,18 @@
     <link href="css/default.css" rel="stylesheet">
     <link href="css/response.css" rel="stylesheet">
 </head>
-<body>
-    <main>
-        <svg class="success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
-         <h1>Success!</h1>
-         <p>Check your Email for details</p>
-        <button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
-            <p>Okay</p></button>
-        <p class="open-mail display-none">Check your inbox to confirm</p>
-    </main>
-    <script>
-        async function openEmailApp(){
+<body><div class="email-container">
+        <div class="card">
+            <h1>Check Your Email</h1>
+            <p>We have sent you a confirmation email. Please check your inbox and follow the link to confirm your registration.</p>
+            <button>
+             <!-- <p>01:00</p>-->
+              <p>Resend</p>
+            </button>
+        </div>
+    </div>   
+ <script>
+        `async function openEmailApp(){
 const data= JSON.parse(localStorage.getItem('formData')) || {email: 'fector101@yahoo.com'}
 if(data === null) return
 let email = data.email//.split('@').at(-1)
@@ -41,6 +41,6 @@ document.querySelector('.open-mail').classList.remove('display-none')
 window.location.href = domain
 }
 document.querySelector('button').addEventListener('click',openEmailApp)
-    </script>
+    </script>`
 </body>
 </html>
