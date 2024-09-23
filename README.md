@@ -1,4 +1,4 @@
-# My-ver-express-form
+# A simple sign up form
 I a simple sign up form that sends email to user and is hosted with Vercel
 
 # Features
