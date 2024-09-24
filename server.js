@@ -77,7 +77,7 @@ app.use(express.json())
 app.use(formParser.urlencoded({extended:true})) //extended:true allows to accepts nested objects {user1:{name:'fabian'}}
 
 app.use(cors({
-            origin: 'https://my-ver-express-form.vercel.app',
+            origin: 'https://my-simple-form.vercel.app',
             methods:['GET','POST']
             })
        )  // CORS is enable for all routes for protection from unauthorized access
@@ -88,16 +88,22 @@ app.listen(port,()=>{
 
 app.post("/submit", async(req, res) => {
     const sent_bool = await sendMail(req.body.email,req.body['user-name'])
-    sent_bool?res.sendFile(__dirname+'/public/successful.html'):res.sendFile(__dirname+'/public/failure.html')
+    sent_bool? res.redirect('/good'): res.redirect('/fail'))
 });
 
 app.get('/submit', (req, res) => {
   // Redirect to home page
-  res.redirect('/');
+  res.redirect('/')
 })
 
 app.get('/',(req,res)=>{
   res.sendFile(__dirname+'/public/index.html')
+})
+app.get('/good',(req,res)=>{
+  res.sendFile(__dirname+'/public/successful.html')
+})
+app.get('/fail',(req,res)=>{
+  res.sendFile(__dirname+'/public/failure.html')
 })
 app.use((req,res)=>{
   res.status(404).send('Page Sinked')
