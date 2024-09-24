@@ -88,7 +88,7 @@ app.listen(port,()=>{
 
 app.post("/submit", async(req, res) => {
     const sent_bool = await sendMail(req.body.email,req.body['user-name'])
-    sent_bool? res.redirect('/good'): res.redirect('/fail'))
+    sent_bool? res.redirect('/good'): res.redirect('/fail')
 });
 
 app.get('/submit', (req, res) => {
